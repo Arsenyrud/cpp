@@ -1,13 +1,11 @@
 # Makefile
-CXX = g++
-CXXFLAGS = -std=c++17
-LDFLAGS = -lncurses
-
-all: snake
+LDFLAGS=-lncurses -std=c++17 -pthread
 
 snake: main.cpp
-	$(CXX) $(CXXFLAGS) -o snake main.cpp $(LDFLAGS)
+	g++ -o snake main.cpp $(LDFLAGS)
 
 clean:
-	rm -f snake
+	rm snake
+
+all: snake
 
